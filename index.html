@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#100e13"><title>ASHEN REALMS</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="auth" class="screen">
+  <div class="brand">ASHEN <span>REALMS</span><small>ПЕПЕЛЬНЫЕ КОРОЛЕВСТВА</small></div>
+  <section class="panel">
+    <h1 id="authTitle">Возвращение в погибший мир</h1>
+    <input id="username" autocomplete="username" placeholder="Логин">
+    <input id="password" type="password" autocomplete="current-password" placeholder="Пароль (от 8 символов)">
+    <button id="loginBtn">ВОЙТИ</button><button id="registerBtn" class="secondary">СОЗДАТЬ АККАУНТ</button>
+    <p id="authError" class="error"></p>
+  </section>
+</div>
+<div id="create" class="screen hidden">
+  <section class="panel"><div class="brand">НОВАЯ ДУША</div><h2>Назови своего странника</h2>
+  <input id="charName" maxlength="16" placeholder="Имя персонажа"><button id="createBtn">НАЧАТЬ ПУТЬ</button><p id="createError" class="error"></p></section>
+</div>
+<main id="game" class="hidden">
+  <header class="hud"><div><b id="heroName">Странник</b><small>Уровень <span id="heroLevel">1</span></small></div><div class="bars"><div class="bar"><i id="hpBar"></i></div><small id="hpText">100 / 100 HP</small></div><div class="online">● <span id="onlineCount">1</span></div></header>
+  <canvas id="world"></canvas>
+  <div class="zone">ЗАБЫТЫЙ ПРИГОРОД</div>
+  <div class="controls"><div id="stick" class="stick"><div id="knob" class="knob"></div></div><button id="attack" class="attack">⚔</button></div>
+  <section class="chat"><div id="chatLog"><p class="system">Ты ступил на проклятую землю...</p></div><form id="chatForm"><input id="chatInput" maxlength="160" placeholder="Сообщение миру..."><button>➤</button></form></section>
+  <div class="hint">Двигай джойстик • Исследуй руины</div>
+</main>
+<script src="/socket.io/socket.io.js"></script><script src="client.js"></script>
+</body></html>
